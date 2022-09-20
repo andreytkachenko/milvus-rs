@@ -1,25 +1,26 @@
 [package]
 name = "milvus"
-version = "0.1.2"
+version = "0.2.0"
 edition = "2021"
-authors = ["Andrey Tkachenko <andrey@aidev.ru>"]
-repository = "https://github.com/andreytkachenko/milvus-rs.git"
-keywords = ["milvus", "database", "vector", "vector-database", "search"]
-categories = ["database"]
-description = "Milvus SDK library"
-license = "MIT OR Apache-2.0"
-exclude = [".gitignore", ".cargo/config", ".github/**", "codecov.yml"]
-build = "build.rs"
+keywords = ["vector", "database", "sdk"] 
+description = "Unofficial milvus SDK"
+license = "Apache-2.0"
+
+[lib]
+name = "milvus"
 
 [dependencies]
-prost = "0.10"
-thiserror = "1.0.31"
-tokio = "1"
-tonic = "0.7"
+tonic = "0.8"
+prost = "0.11"
+tokio = { version = "1" }
+thiserror = "1.0"
+futures = "0.3"
 
 [build-dependencies]
-tonic-build = "0.7"
+tonic-build = "0.8"
 
 [dev-dependencies]
-anyhow = "1.0.57"
+rand = "0.8"
 tokio = { version = "1", features = ["full"] }
+
+
