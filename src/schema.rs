@@ -93,7 +93,7 @@ pub trait FromDataFields: Sized {
 }
 
 pub trait Collection<'a>: IntoDataFields + FromDataFields {
-    type Entity: Entity;
+    type Entity: Entity + 'static;
     type IterRows: Iterator<Item = Self::Entity> + 'a;
     type IterColumns: Iterator<Item = FieldColumn<'static>> + 'a;
 
